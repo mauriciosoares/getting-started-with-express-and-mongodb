@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	teste
+
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script>
+		$.ajax({
+			url: 'http://localhost:1234/wines',
+			type: 'POST',
+			data: {name: 'Nome', descricao: 'description'},
+			success: function(data) {
+				console.log(data);
+			}
+		})
+	</script>
+</body>
+</html>
