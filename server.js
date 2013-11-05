@@ -9,10 +9,7 @@ var wines = require('./routes/wines.js');
 var app = express();
 
 app.use(express.bodyParser());
-
-// app.get('/', function(req, res) {
-// 	res.send('teste');
-// });
+app.use(express.static(__dirname + '/app'));
 
 app.get('/', function(req, res) {
 	res.sendfile('app/index.html');

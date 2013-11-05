@@ -1,0 +1,15 @@
+{
+  "name": "expressmongo",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.2.0-rc.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
