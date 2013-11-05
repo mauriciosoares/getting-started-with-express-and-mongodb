@@ -20,8 +20,8 @@ app.get('/', function(req, res) {
 app.get('/wines', wines.findAll);
 app.get('/wine/:id', wines.findById);
 app.post('/wines', wines.addWine);
-// app.put('/wines/:id', wines.updateWine);
-// app.delete('/wines/:id', wines.deleteWine);
+app.put('/wines/:id', wines.updateWine);
+app.delete('/wines/:id', wines.deleteWine);
 
 app.listen(1234);
 console.log('listening to http://localhost:1234')

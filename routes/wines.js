@@ -48,9 +48,43 @@ exports.addWine = function(req, res) {
 				console.log('success');
 				res.send(result[0]);
 			}
-		})
-	})
-}
+		});
+	});
+};
+
+exports.updateWine = function(req, res) {
+	var id = req.params.id;
+	var wine = req.body;
+	console.log('updating wine ' + id);
+
+	db.collection('wines', function(err, collection) {
+		collection.update({'_id': new BSON.ObjectID(id)}, wine, {safe: true}, function(err, result) {
+			if(err) {
+				console.log('error');
+				res.send({'error': 'erro'});
+			} else {
+				console.log('ok!');
+				res.send(wine);
+			}
+		});
+	});
+};
+
+exports.deleteWine = function(req, res) {
+	var id = req.params.id;
+	console.log('deleting')
+
+	db.collection('wines', function(err, collection) {
+		collection.remove({'_id': new BSON.ObjectID(id)}, {safe: true}, function(err, result) {
+			if(err) {
+				res.send({error: 'error!'});
+			} else {
+				console.log('deleted!');
+				res.send('deleted!');
+			}
+		});
+	});
+};
 
 // populates database
 var populateDB = function() {

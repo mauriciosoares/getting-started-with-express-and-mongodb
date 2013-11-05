@@ -5,18 +5,43 @@
 	<title></title>
 </head>
 <body>
-	teste
+	<a href="#" onClick="addWine()">ADICIONAR</a>
+	<a href="#" onClick="updateWine()">ATUALIZAR</a>
+	<a href="#" onClick="deleteWine()">DELETAR</a>
 
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script>
-		$.ajax({
-			url: 'http://localhost:1234/wines',
-			type: 'POST',
-			data: {name: 'Nome', descricao: 'description'},
-			success: function(data) {
-				console.log(data);
-			}
-		})
+		function addWine () {
+			$.ajax({
+				url: 'http://localhost:1234/wines',
+				type: 'POST',
+				data: {name: 'Nome', descricao: 'description'},
+				success: function(data) {
+					console.log(data);
+				}
+			});
+		}
+
+		function updateWine () {
+			$.ajax({
+				url: 'http://localhost:1234/wines/527928cc93b1441929000002',
+				type: 'PUT',
+				data: {name: 'NOME ATUALIZADO', descricao: 'DESCRIPTION ATUALIZADO'},
+				success: function(data) {
+					console.log(data);
+				}
+			});
+		}
+
+		function deleteWine () {
+			$.ajax({
+				url: 'http://localhost:1234/wines/527928cc93b1441929000002',
+				type: 'DELETE',
+				success: function(data) {
+					console.log(data);
+				}
+			});
+		}
 	</script>
 </body>
 </html>
