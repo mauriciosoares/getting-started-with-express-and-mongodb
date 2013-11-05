@@ -38,8 +38,18 @@ exports.findAll = function(req, res) {
 };
 
 exports.addWine = function(req, res) {
-	console.log(req.body);
-	res.send({'error':'An error has occurred'});
+	var wine = req.body;
+
+	db.collection('wines', function(err, collection) {
+		collection.insert(wine, {safe: true}, function(err, result) {
+			if(err) {
+				res.send({error: 'An error has occurred'});
+			} else {
+				console.log('success');
+				res.send(result[0]);
+			}
+		})
+	})
 }
 
 // populates database
