@@ -1,0 +1,19 @@
+<div class="row">
+	<form action="#">
+		<div class="input-group">
+			<span class="input-group-addon">Busca</span>
+			<input type="text" class="form-control" ng-model="search.name">
+		</div>
+	</form>
+</div>
+
+<div class="row">
+	<ul class="list-group">
+		<li ng-repeat="wine in wines | filter:search" class="list-group-item">
+			{{wine.name}}
+			<a href="#/wine/{{wine._id}}" class="glyphicon glyphicon-edit">Edit</a>
+			<a href="#" class="glyphicon glyphicon-remove">Delete</a>
+
+		</li>
+	</ul>
+</div>

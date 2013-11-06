@@ -2,7 +2,7 @@
   "name": "expressmongo",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "~1.2.0-rc.3"
+    "angular-route": "~1.2.0-rc.3"
   },
   "ignore": [
     "**/.*",
@@ -10,6 +10,9 @@
     "components",
     "bower_components",
     "test",
-    "tests"
-  ]
+    "tests",
+    "app/bower_components"
+  ],
+  "homepage": "https://github.com/msodeveloper/getting-started-with-express-and-mongodb",
+  "license": "MIT"
 }
