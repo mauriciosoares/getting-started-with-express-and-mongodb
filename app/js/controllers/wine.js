@@ -1,4 +1,4 @@
-APP.controller('WineCtrl', ['$scope', 'wineApi', '$routeParams', function($scope, wineApi, $routeParams) {
+APP.controller('WineCtrl', ['$scope', 'wineApi', '$routeParams', '$location', function($scope, wineApi, $routeParams, $location) {
 	$scope.wine = {};
 
 	var id = $routeParams.id;
@@ -10,7 +10,7 @@ APP.controller('WineCtrl', ['$scope', 'wineApi', '$routeParams', function($scope
 
 	$scope.submit = function() {
 		wineApi.update(id, $scope.wine).success(function(data) {
-			console.log(data);
+			$location.path('/');
 		});
 	};
 }]);
