@@ -9,13 +9,31 @@
 	</div>
 
 	<div class="row">
-		<ul class="list-group">
-			<li ng-repeat="wine in wines | filter:search | orderBy:'name'" class="list-group-item">
-				{{wine.name}}
-				<a href="#/wine/{{wine._id}}" class="glyphicon glyphicon-edit">Edit</a>
-				<a href="" class="glyphicon glyphicon-remove" ng-click="deleteWine(wine)">Delete</a>
-
-			</li>
-		</ul>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="wine in wines | filter:search | orderBy:'name'" class="list-group-item">
+					<td>
+						{{wine.name}}
+					</td>
+					<td>
+						{{wine.price}}
+					</td>
+					<td>
+						<a href="#/wine/{{wine._id}}" class="glyphicon glyphicon-edit">Edit</a>
+					</td>
+					<td>
+						<a href="" class="glyphicon glyphicon-remove" ng-click="deleteWine(wine)">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
